@@ -1,0 +1,102 @@
+{
+  "name": "mxchip-az1366-toolbox",
+  "displayName": "MXCHIP AZ1366 TOOLBOX",
+  "description": "The ultimate toolbox for the MXCHIP AZ1366, with example code for your projects.",
+  "icon":"images/mxchip_toolbox-modified.png",
+  "version": "0.1.85",
+  "license":"MIT",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:mxchip-az1366.MXCHIPCreateProject",
+    "onCommand:mxchip-az1366.MXCHIPUploadProject",
+    "onCommand:mxchip-az1366.MXCHIPExampleButtonScreenCounter",
+    "onCommand:mxchip-az1366.MXCHIPExampleButtonScreenRGB",
+    "onCommand:mxchip-az1366.MXCHIPExampleDinoGame",
+    "onCommand:mxchip-az1366.MXCHIPExamplePingPongGame",
+    "onCommand:mxchip-az1366.MXCHIPInstallDrivers",
+    "onCommand:mxchip-az1366.MXCHIPMQTTClient"
+  ],
+  "main": "./dist/extension.js",
+  "type": "commonjs",
+  "contributes": {
+    "commands": [
+      {
+        "command": "mxchip-az1366.MXCHIPCreateProject",
+        "title": "Mxchip Create New Project"
+      },
+      {
+        "command": "mxchip-az1366.MXCHIPUploadProject",
+        "title": "Mxchip Upload Project"
+      },
+      {
+        "command": "mxchip-az1366.MXCHIPExampleButtonScreenCounter",
+        "title": "Mxchip Example: Counter"
+      },
+      {
+        "command": "mxchip-az1366.MXCHIPExampleButtonScreenRGB",
+        "title": "Mxchip Example: Button"
+      },
+      {
+        "command": "mxchip-az1366.MXCHIPExampleDinoGame",
+        "title": "Mxchip Example: Dino"
+      },
+      {
+        "command": "mxchip-az1366.MXCHIPExamplePingPongGame",
+        "title": "Mxchip Example: Ping Pong"
+      },
+      {
+        "command": "mxchip-az1366.MXCHIPInstallDrivers",
+        "title": "Mxchip Install Drivers"
+      },
+      {
+        "command": "mxchip-az1366.MXCHIPExampleIoTHubTelemetry",
+        "title": "Mxchip Example: Telemetry"
+      },
+      {
+        "command": "mxchip-az1366.MXCHIPMQTTClient",
+        "title": "Mxchip Example: MQTTClient"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.87.0",
+    "@typescript-eslint/eslint-plugin": "^7.11.0",
+    "@typescript-eslint/parser": "^7.11.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.92.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "extract-zip": "^2.0.1",
+    "ncp": "^2.0.0",
+    "node-fetch": "^3.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Arnold208/mxchip-az1366-extension.git"
+  },
+  "publisher": "AfrilogicSolutions"
+}
